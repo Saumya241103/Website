@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{% block title %}Developer Portfolio{% endblock %}</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', path='style.css') }}">
+</head>
+
+<body>
+
+    <header class="site-header">
+        <nav class="nav-shell" aria-label="Main navigation">
+            <a class="brand" href="/" aria-label="Saumya Singh home">
+                <span class="brand-mark">S</span>
+                <span>Saumya Singh</span>
+            </a>
+
+            <div class="nav-links">
+                <a href="#work">Work</a>
+                <a href="#experience">Experience</a>
+                <a href="#skills">Skills</a>
+                <a href="#connect">Connect</a>
+                <a href="https://www.linkedin.com/in/saumya-singh-85a8a11a5" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
+                <a href="mailto:saumyasingh012003@gmail.com">Mail</a>
+                <a class="nav-cta" href="/api/projects/">Projects API <span aria-hidden="true">↗</span></a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer class="site-footer">
+        <p>© 2026 Saumya Singh</p>
+        <p class="footer-status"><span></span> Available for meaningful builds · <a href="https://www.linkedin.com/in/saumya-singh-85a8a11a5" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></p>
+    </footer>
+
+    <script src="{{ url_for('static', path='script.js') }}"></script>
+
+</body>
+
+</html>
