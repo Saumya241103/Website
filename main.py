@@ -1,8 +1,12 @@
+from pathlib import Path
+
 from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
 
 import home
 import project as projects
+
+BASE_DIR = Path(__file__).resolve().parent
 
 app = FastAPI(
     title="Saumya Singh - Developer Portfolio",
@@ -11,7 +15,7 @@ app = FastAPI(
 )
 
 # Static files
-app.mount("/static", StaticFiles(directory="."), name="static")
+app.mount("/static", StaticFiles(directory=BASE_DIR), name="static")
 
 # Routes
 app.include_router(home.router)
